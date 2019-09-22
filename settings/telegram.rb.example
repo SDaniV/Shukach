@@ -1,0 +1,3 @@
+module TelegramSettings
+  TOKEN = 'bot_token'.freeze
+end

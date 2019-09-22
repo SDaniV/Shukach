@@ -6,6 +6,7 @@ gem "telegram-bot-ruby"
 gem "selenium-webdriver"
 gem "ffi"
 gem 'rspec'
+gem 'require_all'
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 

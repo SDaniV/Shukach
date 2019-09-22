@@ -1,10 +1,13 @@
 #coding UTF-8
 
 require 'telegram/bot'
-require_relative 'parser/sportua_parser.rb'
-require_relative 'parser/sportanalytic_parser.rb'
+require 'require_all'
+require_all 'parser'
+require_all 'settings'
+# require_relative 'parser/sportua_parser.rb'
+# require_relative 'parser/sportanalytic_parser.rb'
 
-TOKEN = '974156854:AAF2cXdSc9dYbHMtzjdvbjO0PkFcM6gJIuk'.freeze
+TOKEN = TelegramSettings::TOKEN
 
 TOPICS = ['Футбол', 'Волейбол']
 
