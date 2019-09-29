@@ -2,15 +2,15 @@ require 'selenium-webdriver'
 require_relative 'parser.rb'
 # Dir["../*.rb"].each {|file| require file }
 
-class SportAnalyticParser < Parser
+class SportAnalyticParser
 
-  # def load_driver
-  #   root_path = File.dirname(__FILE__)
-  #   Selenium::WebDriver::Chrome::Service.driver_path=File.join("#{root_path}", \
-  #     '../tools/chromedriver/chromedriver76.exe')
-  #   @driver = Selenium::WebDriver.for :chrome
-  #   @driver.manage().window().maximize();
-  # end
+  def load_driver
+    root_path = File.dirname(__FILE__)
+    Selenium::WebDriver::Chrome::Service.driver_path=File.join("#{root_path}", \
+      '../tools/chromedriver/chromedriver76.exe')
+    @driver = Selenium::WebDriver.for :chrome
+    @driver.manage().window().maximize();
+  end
 
   def get_main_football_post
     load_driver

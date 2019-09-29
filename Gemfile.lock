@@ -19,6 +19,7 @@ GEM
     ice_nine (0.11.2)
     inflecto (0.0.2)
     multipart-post (2.1.1)
+    mysql2 (0.5.2-x64-mingw32)
     rake (12.3.0)
     require_all (2.0.0)
     rspec (3.8.0)
@@ -54,6 +55,7 @@ PLATFORMS
 
 DEPENDENCIES
   ffi
+  mysql2
   require_all
   rspec
   selenium-webdriver

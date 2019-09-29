@@ -2,8 +2,8 @@
 
 require 'telegram/bot'
 require 'require_all'
-require_all 'parser'
-require_all 'settings'
+require_all '../parser'
+require_all '../settings'
 # require_relative 'parser/sportua_parser.rb'
 # require_relative 'parser/sportanalytic_parser.rb'
 
