@@ -1,3 +1,6 @@
-module TelegramSettings
-  TOKEN = 'bot_token'.freeze
+module ProjectSettings
+  TOKEN = ''.freeze
+  DB_PASSWORD = ''.freeze
 end
+
+

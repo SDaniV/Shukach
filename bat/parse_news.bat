@@ -1,0 +1,1 @@
+ruby ..\shukach\mail_scripts\news_finder.rb
