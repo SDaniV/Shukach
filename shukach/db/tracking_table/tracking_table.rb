@@ -2,8 +2,6 @@ require 'mysql2'
 require 'require_all'
 require_all 'db'
 
-require 'pry'
-
 class TrackingTable < SportNewsDB
   def mark_id_as_used(id)
     @sql_client.query("INSERT INTO tracking(PostID) VALUES('#{id}')")
@@ -13,7 +11,6 @@ class TrackingTable < SportNewsDB
     used = false
     @sql_client.query('SELECT * FROM tracking').each do |row|
       used = true if row['PostID'] == id
-      # binding.pry
     end
     used
   end

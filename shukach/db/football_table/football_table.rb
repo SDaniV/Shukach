@@ -4,7 +4,7 @@ require_all 'db'
 
 class FootballTable < SportNewsDB
   def insert_post(values)
-    @sql_client.query("INSERT INTO football_news(title, post_description, image_path) VALUES('#{values[:title]}', '#{values[:first_paragraph]}', '#{values[:image_path]}')")
+    @sql_client.query("INSERT INTO football_news(title, post_description, image_path, link) VALUES('#{values[:title]}', '#{values[:first_paragraph]}', '#{values[:image_path]}', '#{values[:link]}')")
   end
 
   def select_post

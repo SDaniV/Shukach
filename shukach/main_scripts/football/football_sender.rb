@@ -1,4 +1,3 @@
-require 'pry'
 require 'telegram/bot'
 require 'require_all'
 require_all 'db'
@@ -19,18 +18,25 @@ begin
     title = post_values['title']
     post_description = post_values['post_description']
     image_path = post_values['image_path']
+    link = post_values['link']
 
     Telegram::Bot::Client.run(ProjectSettings::TOKEN) do |bot|
       p "I'm listening"
       bot.api.send_photo(
         chat_id: ProjectSettings::MY_ID,
         photo: image_path,
-        caption: "#{title}\n\n#{post_description}"
+        caption: "#{title}\n\n#{post_description}\n\nЗа детальнішою інформацією:\n\n#{link}"
       )
     end
     tracking_table.mark_id_as_used(post_id)
   else
-    puts 'There are no new posts...'
+    Telegram::Bot::Client.run(ProjectSettings::TOKEN) do |bot|
+      p "I'm listening"
+      bot.api.send_message(
+        chat_id: ProjectSettings::MY_ID,
+        text: 'There are no more actual news in database...'
+      )
+    end
   end
 ensure
   @football_table.close_db
