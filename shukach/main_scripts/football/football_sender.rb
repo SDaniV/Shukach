@@ -10,7 +10,7 @@ begin
   post_values = nil
 
   table_data.each do |post|
-    post_values = post if tracking_table.already_used_id?(post['id']) == false
+    post_values = post if tracking_table.already_used_link?(post['link']) == false
   end
 
   if post_values
@@ -28,7 +28,7 @@ begin
         caption: "#{title}\n\n#{post_description}\n\nЗа детальнішою інформацією:\n\n#{link}"
       )
     end
-    tracking_table.mark_id_as_used(post_id)
+    tracking_table.mark_link_as_used(link)
   else
     Telegram::Bot::Client.run(ProjectSettings::TOKEN) do |bot|
       p "I'm listening"

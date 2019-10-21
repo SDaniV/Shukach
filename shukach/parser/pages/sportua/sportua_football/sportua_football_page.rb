@@ -17,8 +17,8 @@ class SportUAFootballPage < SportUAMainPage
 
   def find_first_popular_post
     values = {}
-    values[:title] = find_post_title(SportUAFootballSelectors::FIRST_POPULAR_POST_TITLE)
-    values[:first_paragraph] = find_first_paragraph(SportUAFootballSelectors::FIRST_POPULAR_POST_PARAGRAPH)
+    values[:title] = find_post_title(SportUAFootballSelectors::FIRST_POPULAR_POST_TITLE).gsub("'", '')
+    values[:first_paragraph] = find_first_paragraph(SportUAFootballSelectors::FIRST_POPULAR_POST_PARAGRAPH).gsub("'", '')
     values[:link] = find_post_link(SportUAFootballSelectors::FIRST_POPULAR_POST_LINK)
     values[:image_path] = find_post_image(SportUAFootballSelectors::FIRST_POPULAR_POST_IMAGE)
     values

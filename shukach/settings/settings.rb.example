@@ -1,6 +1,7 @@
 module ProjectSettings
   TOKEN = ''.freeze
   DB_PASSWORD = ''.freeze
+  MY_ID = ''.freeze
 end
 
 
