@@ -7,6 +7,7 @@ gem 'ffi'
 gem 'mysql2'
 gem 'require_all'
 gem 'rspec'
+gem 'rubocop'
 gem 'ruby-debug-ide'
 gem 'selenium-webdriver'
 gem 'solargraph' # vscode go to definition

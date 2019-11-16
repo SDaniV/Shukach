@@ -101,6 +101,7 @@ DEPENDENCIES
   mysql2
   require_all
   rspec
+  rubocop
   ruby-debug-ide
   selenium-webdriver
   solargraph
