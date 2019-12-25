@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "telegram-bot-ruby"
-gem "selenium-webdriver"
-gem "ffi"
-gem 'rspec'
+gem 'debase'
+gem 'ffi'
+gem 'mysql2'
 gem 'require_all'
+gem 'rspec'
+gem 'rubocop'
+gem 'ruby-debug-ide'
+gem 'selenium-webdriver'
+gem 'solargraph' # vscode go to definition
+gem 'telegram-bot-ruby'
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-# gem "rails"
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }

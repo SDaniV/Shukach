@@ -1,16 +1,18 @@
 require 'selenium-webdriver'
-require_relative 'parser.rb'
+require 'require_all'
+require_all 'parser'
+# require_relative 'parser.rb'
 # Dir["../*.rb"].each {|file| require file }
 
-class SportAnalyticParser < Parser
-
-  # def load_driver
-  #   root_path = File.dirname(__FILE__)
-  #   Selenium::WebDriver::Chrome::Service.driver_path=File.join("#{root_path}", \
-  #     '../tools/chromedriver/chromedriver76.exe')
-  #   @driver = Selenium::WebDriver.for :chrome
-  #   @driver.manage().window().maximize();
-  # end
+class SportAnalyticParser < Driver
+  # DELETE IT
+  def load_driver
+    root_path = File.dirname(__FILE__)
+    Selenium::WebDriver::Chrome::Service.driver_path = File.join("#{root_path}.to_s", 
+                                                                 ChromeDriverCnst::CHROMEDRIVERPATH)
+    @driver = Selenium::WebDriver.for :chrome
+    @driver.manage.window.maximize
+  end
 
   def get_main_football_post
     load_driver
@@ -20,7 +22,7 @@ class SportAnalyticParser < Parser
   end
 
   def load_sportanalytic
-    @driver.navigate.to "http://sportanalytic.com/"
+    @driver.navigate.to 'http://sportanalytic.com/'
   end
 
   def go_to_football_page
@@ -34,8 +36,7 @@ class SportAnalyticParser < Parser
 
   def get_main_post_image
     css_selector = 'div.bline3:nth-child(3) > div:nth-child(2) > img:nth-child(1)'
-    main_img = @driver.find_element(css: "#{css_selector}")
+    main_img = @driver.find_element(css: "#{css_selector}.to_s")
     img_src = main_img.attribute('src')
   end
-
 end

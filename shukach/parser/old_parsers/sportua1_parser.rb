@@ -1,20 +1,9 @@
 require 'selenium-webdriver'
 
-class SportUAParser
-
-  # def initialize(browser)
-  #   @browser = browser
+class SportUAParser < Driver
+  # def initialize
+  #   super
   # end
-
-  def load_driver
-    root_path = File.dirname(__FILE__)
-    Selenium::WebDriver::Chrome::Service.driver_path=File.join("#{root_path}", \
-      '../tools/chromedriver/chromedriver76.exe')
-    # options = Selenium::WebDriver::Chrome::Options.new
-    # options.add_argument('--headless')
-    @driver = Selenium::WebDriver.for :chrome
-    @driver.manage().window().maximize();
-  end
 
   def vse_na_kupu
     load_driver
@@ -30,7 +19,7 @@ class SportUAParser
   end
 
   def load_sportua
-    @driver.navigate.to "https://sport.ua/uk"
+    @driver.navigate.to 'https://sport.ua/uk'
   end
 
   def go_to_basketball_page
@@ -58,5 +47,4 @@ class SportUAParser
     main_img = @driver.find_element(css: 'div.main-post > a:nth-child(1) > img:nth-child(1)')
     img_src = main_img.attribute('src')
   end
-
 end
