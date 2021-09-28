@@ -20,19 +20,23 @@ GEM
     equalizer (0.0.11)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
+    ffi (1.11.1)
     ffi (1.11.1-x64-mingw32)
     htmlentities (4.3.4)
     ice_nine (0.11.2)
     inflecto (0.0.2)
     jaro_winkler (1.5.3)
-    mini_portile2 (2.4.0)
     multipart-post (2.1.1)
+    mysql2 (0.5.2)
     mysql2 (0.5.2-x64-mingw32)
-    nokogiri (1.10.4-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.12.5-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
+      racc (~> 1.4)
     parallel (1.17.0)
     parser (2.6.4.1)
       ast (~> 2.4.0)
+    racc (1.5.2)
     rainbow (3.0.0)
     rake (12.3.0)
     require_all (2.0.0)
@@ -94,6 +98,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   debase
